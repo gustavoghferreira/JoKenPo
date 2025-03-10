@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClassico));
             labelEscolha = new Label();
             labelPedra = new Label();
             buttonPedra = new Button();
@@ -53,7 +52,7 @@
             // 
             labelEscolha.AutoSize = true;
             labelEscolha.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelEscolha.Location = new Point(236, 27);
+            labelEscolha.Location = new Point(236, 9);
             labelEscolha.Name = "labelEscolha";
             labelEscolha.Size = new Size(89, 30);
             labelEscolha.TabIndex = 0;
@@ -200,7 +199,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(564, 411);
+            ClientSize = new Size(560, 410);
             Controls.Add(labelResposta);
             Controls.Add(labelPC);
             Controls.Add(labelJogador);
@@ -216,9 +215,8 @@
             Controls.Add(buttonPedra);
             Controls.Add(labelPedra);
             Controls.Add(labelEscolha);
-            Icon = (Icon)resources.GetObject("$this.Icon");
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormClassico";
-            Text = "Clássico";
             ((System.ComponentModel.ISupportInitialize)pictureJogador).EndInit();
             ((System.ComponentModel.ISupportInitialize)picturePC).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureResultado).EndInit();
