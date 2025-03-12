@@ -62,7 +62,7 @@
             // 
             labelPedra.AutoSize = true;
             labelPedra.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPedra.Location = new Point(55, 87);
+            labelPedra.Location = new Point(57, 87);
             labelPedra.Name = "labelPedra";
             labelPedra.Size = new Size(67, 30);
             labelPedra.TabIndex = 1;
@@ -91,7 +91,7 @@
             // buttonTesoura
             // 
             buttonTesoura.BackgroundImage = Properties.Resources.tesoura;
-            buttonTesoura.Location = new Point(409, 120);
+            buttonTesoura.Location = new Point(410, 120);
             buttonTesoura.Name = "buttonTesoura";
             buttonTesoura.Size = new Size(120, 120);
             buttonTesoura.TabIndex = 4;
@@ -102,7 +102,7 @@
             // 
             labelPapel.AutoSize = true;
             labelPapel.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPapel.Location = new Point(249, 87);
+            labelPapel.Location = new Point(248, 87);
             labelPapel.Name = "labelPapel";
             labelPapel.Size = new Size(64, 30);
             labelPapel.TabIndex = 5;
@@ -112,7 +112,7 @@
             // 
             labelTesoura.AutoSize = true;
             labelTesoura.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTesoura.Location = new Point(434, 87);
+            labelTesoura.Location = new Point(437, 87);
             labelTesoura.Name = "labelTesoura";
             labelTesoura.Size = new Size(67, 30);
             labelTesoura.TabIndex = 6;
@@ -139,7 +139,7 @@
             // pictureResultado
             // 
             pictureResultado.BorderStyle = BorderStyle.FixedSingle;
-            pictureResultado.Location = new Point(409, 256);
+            pictureResultado.Location = new Point(410, 256);
             pictureResultado.Name = "pictureResultado";
             pictureResultado.Size = new Size(120, 120);
             pictureResultado.TabIndex = 9;
@@ -169,7 +169,7 @@
             // 
             labelJogador.AutoSize = true;
             labelJogador.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelJogador.Location = new Point(64, 297);
+            labelJogador.Location = new Point(61, 297);
             labelJogador.Name = "labelJogador";
             labelJogador.Size = new Size(58, 30);
             labelJogador.TabIndex = 12;
@@ -189,7 +189,7 @@
             // 
             labelResposta.AutoSize = true;
             labelResposta.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelResposta.Location = new Point(460, 297);
+            labelResposta.Location = new Point(459, 306);
             labelResposta.Name = "labelResposta";
             labelResposta.Size = new Size(22, 30);
             labelResposta.TabIndex = 14;
@@ -215,7 +215,7 @@
             Controls.Add(buttonPedra);
             Controls.Add(labelPedra);
             Controls.Add(labelEscolha);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FormClassico";
             ((System.ComponentModel.ISupportInitialize)pictureJogador).EndInit();
             ((System.ComponentModel.ISupportInitialize)picturePC).EndInit();

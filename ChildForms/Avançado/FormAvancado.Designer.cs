@@ -56,7 +56,7 @@
             // 
             labelEscolha.AutoSize = true;
             labelEscolha.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelEscolha.Location = new Point(226, 9);
+            labelEscolha.Location = new Point(236, 9);
             labelEscolha.Name = "labelEscolha";
             labelEscolha.Size = new Size(89, 30);
             labelEscolha.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             labelTesoura.AutoSize = true;
             labelTesoura.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTesoura.Location = new Point(419, 64);
+            labelTesoura.Location = new Point(437, 64);
             labelTesoura.Name = "labelTesoura";
             labelTesoura.Size = new Size(67, 30);
             labelTesoura.TabIndex = 9;
@@ -76,7 +76,7 @@
             // 
             labelPapel.AutoSize = true;
             labelPapel.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPapel.Location = new Point(234, 64);
+            labelPapel.Location = new Point(248, 64);
             labelPapel.Name = "labelPapel";
             labelPapel.Size = new Size(64, 30);
             labelPapel.TabIndex = 8;
@@ -86,7 +86,7 @@
             // 
             labelPedra.AutoSize = true;
             labelPedra.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPedra.Location = new Point(55, 64);
+            labelPedra.Location = new Point(57, 64);
             labelPedra.Name = "labelPedra";
             labelPedra.Size = new Size(67, 30);
             labelPedra.TabIndex = 7;
@@ -95,7 +95,7 @@
             // buttonTesoura
             // 
             buttonTesoura.BackgroundImage = Properties.Resources.tesoura;
-            buttonTesoura.Location = new Point(396, 97);
+            buttonTesoura.Location = new Point(410, 97);
             buttonTesoura.Name = "buttonTesoura";
             buttonTesoura.Size = new Size(120, 120);
             buttonTesoura.TabIndex = 12;
@@ -105,7 +105,7 @@
             // buttonPapel
             // 
             buttonPapel.BackgroundImage = Properties.Resources.papel;
-            buttonPapel.Location = new Point(207, 97);
+            buttonPapel.Location = new Point(220, 97);
             buttonPapel.Name = "buttonPapel";
             buttonPapel.Size = new Size(120, 120);
             buttonPapel.TabIndex = 11;
@@ -115,7 +115,7 @@
             // buttonPedra
             // 
             buttonPedra.BackgroundImage = Properties.Resources.pedra;
-            buttonPedra.Location = new Point(28, 97);
+            buttonPedra.Location = new Point(30, 97);
             buttonPedra.Name = "buttonPedra";
             buttonPedra.Size = new Size(120, 120);
             buttonPedra.TabIndex = 10;
@@ -126,7 +126,7 @@
             // 
             buttonLagarto.BackgroundImage = Properties.Resources.pedra;
             buttonLagarto.Image = Properties.Resources.lagarto;
-            buttonLagarto.Location = new Point(112, 253);
+            buttonLagarto.Location = new Point(127, 253);
             buttonLagarto.Name = "buttonLagarto";
             buttonLagarto.Size = new Size(120, 120);
             buttonLagarto.TabIndex = 13;
@@ -137,7 +137,7 @@
             // 
             buttonSpock.BackgroundImage = Properties.Resources.papel;
             buttonSpock.Image = Properties.Resources.spock;
-            buttonSpock.Location = new Point(302, 253);
+            buttonSpock.Location = new Point(313, 253);
             buttonSpock.Name = "buttonSpock";
             buttonSpock.Size = new Size(120, 120);
             buttonSpock.TabIndex = 14;
@@ -148,7 +148,7 @@
             // 
             labelLagarto.AutoSize = true;
             labelLagarto.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelLagarto.Location = new Point(132, 220);
+            labelLagarto.Location = new Point(144, 220);
             labelLagarto.Name = "labelLagarto";
             labelLagarto.Size = new Size(88, 30);
             labelLagarto.TabIndex = 15;
@@ -158,7 +158,7 @@
             // 
             labelSpock.AutoSize = true;
             labelSpock.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelSpock.Location = new Point(326, 220);
+            labelSpock.Location = new Point(338, 220);
             labelSpock.Name = "labelSpock";
             labelSpock.Size = new Size(71, 30);
             labelSpock.TabIndex = 16;
@@ -167,7 +167,7 @@
             // pictureResultado
             // 
             pictureResultado.BorderStyle = BorderStyle.FixedSingle;
-            pictureResultado.Location = new Point(396, 379);
+            pictureResultado.Location = new Point(410, 379);
             pictureResultado.Name = "pictureResultado";
             pictureResultado.Size = new Size(120, 120);
             pictureResultado.TabIndex = 19;
@@ -176,7 +176,7 @@
             // picturePC
             // 
             picturePC.BorderStyle = BorderStyle.FixedSingle;
-            picturePC.Location = new Point(207, 379);
+            picturePC.Location = new Point(220, 379);
             picturePC.Name = "picturePC";
             picturePC.Size = new Size(120, 120);
             picturePC.TabIndex = 18;
@@ -185,7 +185,7 @@
             // pictureJogador
             // 
             pictureJogador.BorderStyle = BorderStyle.FixedSingle;
-            pictureJogador.Location = new Point(17, 379);
+            pictureJogador.Location = new Point(30, 379);
             pictureJogador.Name = "pictureJogador";
             pictureJogador.Size = new Size(120, 120);
             pictureJogador.TabIndex = 17;
@@ -195,7 +195,7 @@
             // 
             labelResposta.AutoSize = true;
             labelResposta.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelResposta.Location = new Point(446, 426);
+            labelResposta.Location = new Point(459, 426);
             labelResposta.Name = "labelResposta";
             labelResposta.Size = new Size(22, 30);
             labelResposta.TabIndex = 24;
@@ -205,7 +205,7 @@
             // 
             labelPC.AutoSize = true;
             labelPC.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPC.Location = new Point(247, 426);
+            labelPC.Location = new Point(261, 426);
             labelPC.Name = "labelPC";
             labelPC.Size = new Size(38, 30);
             labelPC.TabIndex = 23;
@@ -215,7 +215,7 @@
             // 
             labelJogador.AutoSize = true;
             labelJogador.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelJogador.Location = new Point(50, 426);
+            labelJogador.Location = new Point(61, 426);
             labelJogador.Name = "labelJogador";
             labelJogador.Size = new Size(58, 30);
             labelJogador.TabIndex = 22;
@@ -225,7 +225,7 @@
             // 
             labelIgual.AutoSize = true;
             labelIgual.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelIgual.Location = new Point(349, 426);
+            labelIgual.Location = new Point(360, 426);
             labelIgual.Name = "labelIgual";
             labelIgual.Size = new Size(28, 30);
             labelIgual.TabIndex = 21;
@@ -235,7 +235,7 @@
             // 
             labelVs.AutoSize = true;
             labelVs.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelVs.Location = new Point(154, 426);
+            labelVs.Location = new Point(168, 426);
             labelVs.Name = "labelVs";
             labelVs.Size = new Size(33, 30);
             labelVs.TabIndex = 20;
@@ -245,7 +245,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(544, 535);
+            ClientSize = new Size(560, 530);
             Controls.Add(labelResposta);
             Controls.Add(labelPC);
             Controls.Add(labelJogador);
@@ -265,7 +265,7 @@
             Controls.Add(labelPapel);
             Controls.Add(labelPedra);
             Controls.Add(labelEscolha);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FormAvancado";
             ((System.ComponentModel.ISupportInitialize)pictureResultado).EndInit();
             ((System.ComponentModel.ISupportInitialize)picturePC).EndInit();

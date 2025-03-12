@@ -70,7 +70,7 @@
             // 
             jogoClássicoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clássicoToolStripMenuItem, avançadoToolStripMenuItem });
             jogoClássicoToolStripMenuItem.Name = "jogoClássicoToolStripMenuItem";
-            jogoClássicoToolStripMenuItem.Size = new Size(180, 22);
+            jogoClássicoToolStripMenuItem.Size = new Size(136, 22);
             jogoClássicoToolStripMenuItem.Text = "Jogo";
             // 
             // clássicoToolStripMenuItem
@@ -78,31 +78,31 @@
             clássicoToolStripMenuItem.Name = "clássicoToolStripMenuItem";
             clássicoToolStripMenuItem.Size = new Size(127, 22);
             clássicoToolStripMenuItem.Text = "Clássico";
-            clássicoToolStripMenuItem.Click += clássicoToolStripMenuItem_Click;
+            clássicoToolStripMenuItem.Click += jogoClassicoToolStripMenuItem_Click;
             // 
             // avançadoToolStripMenuItem
             // 
             avançadoToolStripMenuItem.Name = "avançadoToolStripMenuItem";
             avançadoToolStripMenuItem.Size = new Size(127, 22);
             avançadoToolStripMenuItem.Text = "Avançado";
-            avançadoToolStripMenuItem.Click += avançadoToolStripMenuItem_Click;
+            avançadoToolStripMenuItem.Click += jogoAvançadoToolStripMenuItem_Click;
             // 
             // fecharJogoToolStripMenuItem1
             // 
             fecharJogoToolStripMenuItem1.Name = "fecharJogoToolStripMenuItem1";
-            fecharJogoToolStripMenuItem1.Size = new Size(180, 22);
+            fecharJogoToolStripMenuItem1.Size = new Size(136, 22);
             fecharJogoToolStripMenuItem1.Text = "Fechar jogo";
             fecharJogoToolStripMenuItem1.Click += fecharJogoToolStripMenuItem1_Click;
             // 
             // fecharJogoToolStripMenuItem
             // 
             fecharJogoToolStripMenuItem.Name = "fecharJogoToolStripMenuItem";
-            fecharJogoToolStripMenuItem.Size = new Size(177, 6);
+            fecharJogoToolStripMenuItem.Size = new Size(133, 6);
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(180, 22);
+            sairToolStripMenuItem.Size = new Size(136, 22);
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
@@ -156,30 +156,34 @@
             modoClássicoToolStripMenuItem.Name = "modoClássicoToolStripMenuItem";
             modoClássicoToolStripMenuItem.Size = new Size(160, 22);
             modoClássicoToolStripMenuItem.Text = "Modo clássico";
+            modoClássicoToolStripMenuItem.Click += modoClassicoToolStripMenuItem_Click;
             // 
             // modoAvançadoToolStripMenuItem
             // 
             modoAvançadoToolStripMenuItem.Name = "modoAvançadoToolStripMenuItem";
             modoAvançadoToolStripMenuItem.Size = new Size(160, 22);
             modoAvançadoToolStripMenuItem.Text = "Modo avançado";
+            modoAvançadoToolStripMenuItem.Click += modoAvançadoToolStripMenuItem_Click;
             // 
             // panelPrincipal
             // 
             panelPrincipal.Dock = DockStyle.Fill;
             panelPrincipal.Location = new Point(0, 24);
             panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(564, 417);
+            panelPrincipal.Size = new Size(564, 407);
             panelPrincipal.TabIndex = 1;
             // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(564, 441);
+            ClientSize = new Size(564, 431);
             Controls.Add(panelPrincipal);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
             Name = "FormPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "JoKenPo";
