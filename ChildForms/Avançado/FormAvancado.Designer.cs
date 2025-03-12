@@ -66,11 +66,11 @@
             // 
             labelTesoura.AutoSize = true;
             labelTesoura.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTesoura.Location = new Point(437, 64);
+            labelTesoura.Location = new Point(430, 64);
             labelTesoura.Name = "labelTesoura";
-            labelTesoura.Size = new Size(67, 30);
+            labelTesoura.Size = new Size(87, 30);
             labelTesoura.TabIndex = 9;
-            labelTesoura.Text = "Pedra";
+            labelTesoura.Text = "Tesoura";
             // 
             // labelPapel
             // 
@@ -245,7 +245,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 530);
+            ClientSize = new Size(560, 550);
             Controls.Add(labelResposta);
             Controls.Add(labelPC);
             Controls.Add(labelJogador);

@@ -6,5 +6,20 @@ namespace JoKenPo
         {
             InitializeComponent();
         }
+
+        private void buttonPapel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonPedra_Click(object sender, EventArgs e)
+        {
+
+        }
+       
+        private void buttonTesoura_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

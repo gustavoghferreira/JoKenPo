@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
-using System.Net.Http;
 
 namespace JoKenPo
 {
     public partial class FormPrincipal : Form
     {
+        byte numeroDePartidas = 0;
         public FormPrincipal()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace JoKenPo
                 child.StartPosition = FormStartPosition.CenterScreen;
                 child.Dock = DockStyle.Fill;
                 child.Show();
-                panelPrincipal.Controls.Add(child);                
+                panelPrincipal.Controls.Add(child);
             }
             catch (Exception ex)
             {
@@ -50,14 +50,14 @@ namespace JoKenPo
         private void jogoAvançadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Text = "JoKenPo: avançado";
-            ClientSize = new Size(560, 550);
+            ClientSize = new Size(560, 575);
             carregarForm(new FormAvancado());
         }
 
         private void jogoClassicoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Text = "JoKenPo: clássico";
-            ClientSize = new Size(560, 430);
+            ClientSize = new Size(560, 450);
             carregarForm(new FormClassico());
         }
 
@@ -73,6 +73,30 @@ namespace JoKenPo
         }
         #endregion
 
+        #region Menu Configurações        
+
+        private void melhorDe3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            numeroDePartidas = 3;
+        }
+
+        private void melhorDe5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            numeroDePartidas = 5;
+        }
+
+        private void melhorDe10ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            numeroDePartidas = 10;
+        }
+
+        private void partidaUnicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            numeroDePartidas = 1;
+        }
+
+        #endregion
+
         #region Menu Sobre
 
         public void carregarImagem(String enderecoImagem)
@@ -81,15 +105,15 @@ namespace JoKenPo
             {
                 limparControles(panelPrincipal);
 
-                ClientSize = new Size(560, 450);
+                ClientSize = new Size(560, 460);
                 PictureBox pictureBox = new PictureBox();
-                pictureBox.Dock = DockStyle.Fill;                
+                pictureBox.Dock = DockStyle.Fill;
                 pictureBox.ImageLocation = (enderecoImagem);
                 panelPrincipal.Controls.Add(pictureBox);
             }
             catch (Exception ex)
             {
-               MessageBox.Show(ex.Message, enderecoImagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, enderecoImagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void modoAvançadoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -105,5 +129,6 @@ namespace JoKenPo
         }
 
         #endregion
+
     }
 }

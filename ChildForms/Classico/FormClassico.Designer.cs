@@ -77,6 +77,7 @@
             buttonPedra.TabIndex = 2;
             buttonPedra.TabStop = false;
             buttonPedra.UseVisualStyleBackColor = true;
+            buttonPedra.Click += buttonPedra_Click;
             // 
             // buttonPapel
             // 
@@ -87,6 +88,7 @@
             buttonPapel.TabIndex = 3;
             buttonPapel.TabStop = false;
             buttonPapel.UseVisualStyleBackColor = true;
+            buttonPapel.Click += buttonPapel_Click;
             // 
             // buttonTesoura
             // 
@@ -97,6 +99,7 @@
             buttonTesoura.TabIndex = 4;
             buttonTesoura.TabStop = false;
             buttonTesoura.UseVisualStyleBackColor = true;
+            buttonTesoura.Click += buttonTesoura_Click;
             // 
             // labelPapel
             // 
@@ -112,11 +115,11 @@
             // 
             labelTesoura.AutoSize = true;
             labelTesoura.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTesoura.Location = new Point(437, 87);
+            labelTesoura.Location = new Point(429, 87);
             labelTesoura.Name = "labelTesoura";
-            labelTesoura.Size = new Size(67, 30);
+            labelTesoura.Size = new Size(87, 30);
             labelTesoura.TabIndex = 6;
-            labelTesoura.Text = "Pedra";
+            labelTesoura.Text = "Tesoura";
             // 
             // pictureJogador
             // 
@@ -199,7 +202,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 410);
+            ClientSize = new Size(560, 430);
             Controls.Add(labelResposta);
             Controls.Add(labelPC);
             Controls.Add(labelJogador);
