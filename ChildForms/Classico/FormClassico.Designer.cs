@@ -42,7 +42,7 @@
             labelIgual = new Label();
             labelJogador = new Label();
             labelPC = new Label();
-            labelResposta = new Label();
+            labelResultado = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureJogador).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picturePC).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureResultado).BeginInit();
@@ -188,22 +188,22 @@
             labelPC.TabIndex = 13;
             labelPC.Text = "PC";
             // 
-            // labelResposta
+            // labelResultado
             // 
-            labelResposta.AutoSize = true;
-            labelResposta.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelResposta.Location = new Point(459, 306);
-            labelResposta.Name = "labelResposta";
-            labelResposta.Size = new Size(22, 30);
-            labelResposta.TabIndex = 14;
-            labelResposta.Text = "?";
+            labelResultado.AutoSize = true;
+            labelResultado.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelResultado.Location = new Point(459, 306);
+            labelResultado.Name = "labelResultado";
+            labelResultado.Size = new Size(22, 30);
+            labelResultado.TabIndex = 14;
+            labelResultado.Text = "?";
             // 
             // FormClassico
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(560, 430);
-            Controls.Add(labelResposta);
+            Controls.Add(labelResultado);
             Controls.Add(labelPC);
             Controls.Add(labelJogador);
             Controls.Add(labelIgual);
@@ -243,6 +243,6 @@
         private Label labelIgual;
         private Label labelJogador;
         private Label labelPC;
-        private Label labelResposta;
+        private Label labelResultado;
     }
 }

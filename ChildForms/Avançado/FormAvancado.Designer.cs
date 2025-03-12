@@ -101,6 +101,7 @@
             buttonTesoura.TabIndex = 12;
             buttonTesoura.TabStop = false;
             buttonTesoura.UseVisualStyleBackColor = true;
+            buttonTesoura.Click += buttonTesoura_Click;
             // 
             // buttonPapel
             // 
@@ -111,6 +112,7 @@
             buttonPapel.TabIndex = 11;
             buttonPapel.TabStop = false;
             buttonPapel.UseVisualStyleBackColor = true;
+            buttonPapel.Click += buttonPapel_Click;
             // 
             // buttonPedra
             // 
@@ -121,6 +123,7 @@
             buttonPedra.TabIndex = 10;
             buttonPedra.TabStop = false;
             buttonPedra.UseVisualStyleBackColor = true;
+            buttonPedra.Click += buttonPedra_Click;
             // 
             // buttonLagarto
             // 
@@ -132,6 +135,7 @@
             buttonLagarto.TabIndex = 13;
             buttonLagarto.TabStop = false;
             buttonLagarto.UseVisualStyleBackColor = true;
+            buttonLagarto.Click += buttonLagarto_Click;
             // 
             // buttonSpock
             // 
@@ -143,6 +147,7 @@
             buttonSpock.TabIndex = 14;
             buttonSpock.TabStop = false;
             buttonSpock.UseVisualStyleBackColor = true;
+            buttonSpock.Click += buttonSpock_Click;
             // 
             // labelLagarto
             // 
