@@ -10,11 +10,11 @@ namespace JoKenPo
     {
         public static Image[] images =
         {
-            Image.FromFile("images/papel.png"),
-            Image.FromFile("images/pedra.png"),
-            Image.FromFile("images/tesoura.png"),
-            Image.FromFile("images/lagarto.png"),
-            Image.FromFile("images/spock.png")
+            Image.FromFile("../../../images/papel.png"),
+            Image.FromFile("../../../images/pedra.png"),
+            Image.FromFile("../../../images/tesoura.png"),
+            Image.FromFile("../../../images/lagarto.png"),
+            Image.FromFile("../../../images/spock.png")
         };
 
         public enum Resultado

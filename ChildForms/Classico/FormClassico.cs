@@ -38,14 +38,14 @@ namespace JoKenPo
             switch (jogo.jogar(opcao, modo))
             {
                 case Game.Resultado.Empatar:
-                    pictureResultado.BackgroundImage = Image.FromFile("images/empatou.png");
+                    pictureResultado.BackgroundImage = Image.FromFile("../../../images/empatou.png");
                     goto default;
                 case Game.Resultado.Ganhar:
-                    pictureResultado.BackgroundImage = Image.FromFile("images/ganhou.png");
+                    pictureResultado.BackgroundImage = Image.FromFile("../../../images/ganhou.png");
                     status.atualizaStatus(1, 1, 0);
                     goto default;
                 case Game.Resultado.Perder:
-                    pictureResultado.BackgroundImage = Image.FromFile("images/perdeu.png");
+                    pictureResultado.BackgroundImage = Image.FromFile("../../../images/perdeu.png");
                     status.atualizaStatus(1, 0, 1);
                     goto default;
                 default:
