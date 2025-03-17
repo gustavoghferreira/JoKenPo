@@ -2,8 +2,11 @@ namespace JoKenPo
 {
     public partial class FormClassico : Form
     {
-        public FormClassico()
+        FormPrincipal status;
+
+        public FormClassico(FormPrincipal status)
         {
+            this.status = status;
             InitializeComponent();
         }
 
@@ -22,14 +25,15 @@ namespace JoKenPo
             startGame(2);
         }
 
-        private void startGame(int opcao)
+        private void startGame(byte opcao)
         {
+
             labelJogador.Visible = false;
             labelPC.Visible = false;
-            labelResultado.Visible = false;            
+            labelResultado.Visible = false;
 
             Game jogo = new Game();
-            string modo = "classico";
+            string modo = "classico";            
 
             switch (jogo.jogar(opcao, modo))
             {
@@ -38,14 +42,16 @@ namespace JoKenPo
                     goto default;
                 case Game.Resultado.Ganhar:
                     pictureResultado.BackgroundImage = Image.FromFile("images/ganhou.png");
+                    status.atualizaStatus(1, 1, 0);
                     goto default;
                 case Game.Resultado.Perder:
                     pictureResultado.BackgroundImage = Image.FromFile("images/perdeu.png");
+                    status.atualizaStatus(1, 0, 1);
                     goto default;
                 default:
                     pictureJogador.Image = jogo.ImagemJogador;
                     picturePC.Image = jogo.ImagemPC;
-                    break;
+                break;
             }
         }
     }

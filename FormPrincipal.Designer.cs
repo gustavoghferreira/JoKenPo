@@ -34,7 +34,7 @@
             jogoClássicoToolStripMenuItem = new ToolStripMenuItem();
             clássicoToolStripMenuItem = new ToolStripMenuItem();
             avançadoToolStripMenuItem = new ToolStripMenuItem();
-            fecharJogoToolStripMenuItem1 = new ToolStripMenuItem();
+            reiniciarJogoToolStripMenuItem1 = new ToolStripMenuItem();
             fecharJogoToolStripMenuItem = new ToolStripSeparator();
             sairToolStripMenuItem = new ToolStripMenuItem();
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
@@ -68,7 +68,7 @@
             // 
             // arquivoToolStripMenuItem
             // 
-            arquivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { jogoClássicoToolStripMenuItem, fecharJogoToolStripMenuItem1, fecharJogoToolStripMenuItem, sairToolStripMenuItem });
+            arquivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { jogoClássicoToolStripMenuItem, reiniciarJogoToolStripMenuItem1, fecharJogoToolStripMenuItem, sairToolStripMenuItem });
             arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             arquivoToolStripMenuItem.Size = new Size(61, 20);
             arquivoToolStripMenuItem.Text = "Arquivo";
@@ -77,7 +77,7 @@
             // 
             jogoClássicoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clássicoToolStripMenuItem, avançadoToolStripMenuItem });
             jogoClássicoToolStripMenuItem.Name = "jogoClássicoToolStripMenuItem";
-            jogoClássicoToolStripMenuItem.Size = new Size(136, 22);
+            jogoClássicoToolStripMenuItem.Size = new Size(180, 22);
             jogoClássicoToolStripMenuItem.Text = "Jogo";
             // 
             // clássicoToolStripMenuItem
@@ -94,22 +94,22 @@
             avançadoToolStripMenuItem.Text = "Avançado";
             avançadoToolStripMenuItem.Click += jogoAvançadoToolStripMenuItem_Click;
             // 
-            // fecharJogoToolStripMenuItem1
+            // reiniciarJogoToolStripMenuItem1
             // 
-            fecharJogoToolStripMenuItem1.Name = "fecharJogoToolStripMenuItem1";
-            fecharJogoToolStripMenuItem1.Size = new Size(136, 22);
-            fecharJogoToolStripMenuItem1.Text = "Fechar jogo";
-            fecharJogoToolStripMenuItem1.Click += fecharJogoToolStripMenuItem1_Click;
+            reiniciarJogoToolStripMenuItem1.Name = "reiniciarJogoToolStripMenuItem1";
+            reiniciarJogoToolStripMenuItem1.Size = new Size(180, 22);
+            reiniciarJogoToolStripMenuItem1.Text = "Reiniciar jogo";
+            reiniciarJogoToolStripMenuItem1.Click += reiniciarJogoToolStripMenuItem1_Click;
             // 
             // fecharJogoToolStripMenuItem
             // 
             fecharJogoToolStripMenuItem.Name = "fecharJogoToolStripMenuItem";
-            fecharJogoToolStripMenuItem.Size = new Size(133, 6);
+            fecharJogoToolStripMenuItem.Size = new Size(177, 6);
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(136, 22);
+            sairToolStripMenuItem.Size = new Size(180, 22);
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
@@ -256,7 +256,7 @@
         private ToolStripMenuItem arquivoToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
         private ToolStripSeparator fecharJogoToolStripMenuItem;
-        private ToolStripMenuItem fecharJogoToolStripMenuItem1;
+        private ToolStripMenuItem reiniciarJogoToolStripMenuItem1;
         private ToolStripMenuItem configuraçõesToolStripMenuItem;
         private ToolStripMenuItem partidasToolStripMenuItem;
         private ToolStripMenuItem partidaUnicaToolStripMenuItem;

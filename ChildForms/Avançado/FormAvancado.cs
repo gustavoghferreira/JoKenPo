@@ -12,8 +12,11 @@ namespace JoKenPo
 {
     public partial class FormAvancado : Form
     {
-        public FormAvancado()
+        FormPrincipal status;
+
+        public FormAvancado(FormPrincipal status)
         {
+            this.status = status;
             InitializeComponent();
         }
 
@@ -41,7 +44,7 @@ namespace JoKenPo
             starGame(2);
         }
 
-        public void starGame(int opcao)
+        public void starGame(byte opcao)
         {
             labelJogador.Visible = false;
             labelPC.Visible = false;
@@ -57,14 +60,16 @@ namespace JoKenPo
                     goto default;
                 case Game.Resultado.Ganhar:
                     pictureResultado.BackgroundImage = Image.FromFile("images/ganhou.png");
+                    status.atualizaStatus(1, 1, 0);
                     goto default;
                 case Game.Resultado.Perder:
                     pictureResultado.BackgroundImage = Image.FromFile("images/perdeu.png");
+                    status.atualizaStatus(1, 0, 1);
                     goto default;
                 default:
                     pictureJogador.Image = jogo.ImagemJogador;
                     picturePC.Image = jogo.ImagemPC;
-                    break;
+                break;
             }
         }       
     }

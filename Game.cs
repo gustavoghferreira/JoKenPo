@@ -25,7 +25,7 @@ namespace JoKenPo
         public Image ImagemJogador { get; private set; }
         public Image ImagemPC { get; private set; }
                 
-        private int jogadaPC(string modoDeJogo)
+        private byte jogadaPC(string modoDeJogo)
         {
             try
             {
@@ -79,9 +79,9 @@ namespace JoKenPo
             }            
         }
 
-        public Resultado jogar(int jogador, string modoDeJogo)
-        {
-            int pc = jogadaPC(modoDeJogo);
+        public Resultado jogar(byte jogador, string modoDeJogo)
+        {            
+            byte pc = jogadaPC(modoDeJogo);
 
             ImagemJogador = images[jogador];
             ImagemPC = images[pc];
@@ -94,7 +94,6 @@ namespace JoKenPo
                      (jogador == 3 && pc == 4) || (jogador == 4 && pc == 2) || (jogador == 2 && pc == 3) ||
                      (jogador == 3 && pc == 0) || (jogador == 0 && pc == 4) || (jogador == 4 && pc == 1) ||
                      (jogador == 1 && pc == 2))
-            
             {
                 return Resultado.Ganhar;
             }
