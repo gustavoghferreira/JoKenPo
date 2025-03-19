@@ -70,7 +70,7 @@
             // 
             // buttonPedra
             // 
-            buttonPedra.Image = Properties.Resources.pedra;
+            buttonPedra.BackgroundImage = Properties.Resources.pedra;
             buttonPedra.Location = new Point(30, 120);
             buttonPedra.Name = "buttonPedra";
             buttonPedra.Size = new Size(120, 120);
@@ -81,7 +81,7 @@
             // 
             // buttonPapel
             // 
-            buttonPapel.Image = Properties.Resources.papel;
+            buttonPapel.BackgroundImage = Properties.Resources.papel;
             buttonPapel.Location = new Point(220, 120);
             buttonPapel.Name = "buttonPapel";
             buttonPapel.Size = new Size(120, 120);
@@ -92,7 +92,7 @@
             // 
             // buttonTesoura
             // 
-            buttonTesoura.Image = Properties.Resources.tesoura;
+            buttonTesoura.BackgroundImage = Properties.Resources.tesoura;
             buttonTesoura.Location = new Point(410, 120);
             buttonTesoura.Name = "buttonTesoura";
             buttonTesoura.Size = new Size(120, 120);

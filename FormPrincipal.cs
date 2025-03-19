@@ -121,14 +121,14 @@ namespace JoKenPo
                 {
                     partidasJogadas += -1;
                     toolStripStatusLabelPartida.Text = "Fim das partidas " + partidasJogadas + "/" + numeroDePartidas;
-                    string enderecoImagem = "../../../images/venceu.png";
+                    string enderecoImagem = "images/venceu.png";
                     carregarImagem(enderecoImagem);
                 }
                 else
                 {
                     partidasJogadas += -1;
                     toolStripStatusLabelPartida.Text = "Fim das partidas " + partidasJogadas + "/" + numeroDePartidas;
-                    string enderecoImagem = "../../../images/derrotado.png";
+                    string enderecoImagem = "images/derrotado.png";
                     carregarImagem(enderecoImagem);
                 }
             }
@@ -211,13 +211,13 @@ namespace JoKenPo
         }
         private void modoAvançadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string enderecoImagem = "../../../images/modoAvancado.png";
+            string enderecoImagem = "images/modoAvancado.png";
             carregarImagem(enderecoImagem);
         }
 
         private void modoClassicoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string enderecoImagem = "../../../images/modoClassico.png";
+            string enderecoImagem = "images/modoClassico.png";
             carregarImagem(enderecoImagem);
         }
 
