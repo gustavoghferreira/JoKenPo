@@ -32,24 +32,24 @@
             menuStrip1 = new MenuStrip();
             arquivoToolStripMenuItem = new ToolStripMenuItem();
             jogoClássicoToolStripMenuItem = new ToolStripMenuItem();
-            clássicoToolStripMenuItem = new ToolStripMenuItem();
-            avançadoToolStripMenuItem = new ToolStripMenuItem();
+            classicoToolStripMenuItem = new ToolStripMenuItem();
+            avancadoToolStripMenuItem = new ToolStripMenuItem();
             reiniciarJogoToolStripMenuItem1 = new ToolStripMenuItem();
             fecharJogoToolStripMenuItem = new ToolStripSeparator();
             sairToolStripMenuItem = new ToolStripMenuItem();
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
             partidasToolStripMenuItem = new ToolStripMenuItem();
-            partidaUnicaToolStripMenuItem = new ToolStripMenuItem();
-            melhorDe3ToolStripMenuItem = new ToolStripMenuItem();
-            melhorDe5ToolStripMenuItem = new ToolStripMenuItem();
-            melhorDe10ToolStripMenuItem = new ToolStripMenuItem();
+            melhorDe1 = new ToolStripMenuItem();
+            melhorDe3 = new ToolStripMenuItem();
+            melhorDe5 = new ToolStripMenuItem();
+            melhorDe10 = new ToolStripMenuItem();
             sobreToolStripMenuItem = new ToolStripMenuItem();
             modoClássicoToolStripMenuItem = new ToolStripMenuItem();
             modoAvançadoToolStripMenuItem = new ToolStripMenuItem();
             panelPrincipal = new Panel();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabelPontuacao = new ToolStripStatusLabel();
-            toolStripStatusLabelVoce = new ToolStripStatusLabel();
+            toolStripStatusLabelJogador = new ToolStripStatusLabel();
             toolStripStatusLabelVs = new ToolStripStatusLabel();
             toolStripStatusLabelPC = new ToolStripStatusLabel();
             toolStripStatusLabelPartida = new ToolStripStatusLabel();
@@ -75,43 +75,43 @@
             // 
             // jogoClássicoToolStripMenuItem
             // 
-            jogoClássicoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clássicoToolStripMenuItem, avançadoToolStripMenuItem });
+            jogoClássicoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { classicoToolStripMenuItem, avancadoToolStripMenuItem });
             jogoClássicoToolStripMenuItem.Name = "jogoClássicoToolStripMenuItem";
-            jogoClássicoToolStripMenuItem.Size = new Size(180, 22);
+            jogoClássicoToolStripMenuItem.Size = new Size(146, 22);
             jogoClássicoToolStripMenuItem.Text = "Jogo";
             // 
-            // clássicoToolStripMenuItem
+            // classicoToolStripMenuItem
             // 
-            clássicoToolStripMenuItem.Name = "clássicoToolStripMenuItem";
-            clássicoToolStripMenuItem.Size = new Size(127, 22);
-            clássicoToolStripMenuItem.Text = "Clássico";
-            clássicoToolStripMenuItem.Click += jogoClassicoToolStripMenuItem_Click;
+            classicoToolStripMenuItem.Name = "classicoToolStripMenuItem";
+            classicoToolStripMenuItem.Size = new Size(127, 22);
+            classicoToolStripMenuItem.Text = "Clássico";
+            classicoToolStripMenuItem.Click += JogoClassicoToolStripMenuItem_Click;
             // 
-            // avançadoToolStripMenuItem
+            // avancadoToolStripMenuItem
             // 
-            avançadoToolStripMenuItem.Name = "avançadoToolStripMenuItem";
-            avançadoToolStripMenuItem.Size = new Size(127, 22);
-            avançadoToolStripMenuItem.Text = "Avançado";
-            avançadoToolStripMenuItem.Click += jogoAvançadoToolStripMenuItem_Click;
+            avancadoToolStripMenuItem.Name = "avancadoToolStripMenuItem";
+            avancadoToolStripMenuItem.Size = new Size(127, 22);
+            avancadoToolStripMenuItem.Text = "Avançado";
+            avancadoToolStripMenuItem.Click += JogoAvançadoToolStripMenuItem_Click;
             // 
             // reiniciarJogoToolStripMenuItem1
             // 
             reiniciarJogoToolStripMenuItem1.Name = "reiniciarJogoToolStripMenuItem1";
-            reiniciarJogoToolStripMenuItem1.Size = new Size(180, 22);
+            reiniciarJogoToolStripMenuItem1.Size = new Size(146, 22);
             reiniciarJogoToolStripMenuItem1.Text = "Reiniciar jogo";
-            reiniciarJogoToolStripMenuItem1.Click += reiniciarJogoToolStripMenuItem1_Click;
+            reiniciarJogoToolStripMenuItem1.Click += ReiniciarJogoToolStripMenuItem_Click;
             // 
             // fecharJogoToolStripMenuItem
             // 
             fecharJogoToolStripMenuItem.Name = "fecharJogoToolStripMenuItem";
-            fecharJogoToolStripMenuItem.Size = new Size(177, 6);
+            fecharJogoToolStripMenuItem.Size = new Size(143, 6);
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(180, 22);
+            sairToolStripMenuItem.Size = new Size(146, 22);
             sairToolStripMenuItem.Text = "Sair";
-            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
+            sairToolStripMenuItem.Click += SairToolStripMenuItem_Click;
             // 
             // configuraçõesToolStripMenuItem
             // 
@@ -122,38 +122,40 @@
             // 
             // partidasToolStripMenuItem
             // 
-            partidasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { partidaUnicaToolStripMenuItem, melhorDe3ToolStripMenuItem, melhorDe5ToolStripMenuItem, melhorDe10ToolStripMenuItem });
+            partidasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { melhorDe1, melhorDe3, melhorDe5, melhorDe10 });
             partidasToolStripMenuItem.Name = "partidasToolStripMenuItem";
-            partidasToolStripMenuItem.Size = new Size(116, 22);
+            partidasToolStripMenuItem.Size = new Size(180, 22);
             partidasToolStripMenuItem.Text = "Partidas";
             // 
-            // partidaUnicaToolStripMenuItem
+            // melhorDe1
             // 
-            partidaUnicaToolStripMenuItem.Name = "partidaUnicaToolStripMenuItem";
-            partidaUnicaToolStripMenuItem.Size = new Size(143, 22);
-            partidaUnicaToolStripMenuItem.Text = "partida única";
-            partidaUnicaToolStripMenuItem.Click += partidaUnicaToolStripMenuItem_Click;
+            melhorDe1.Checked = true;
+            melhorDe1.CheckState = CheckState.Checked;
+            melhorDe1.Name = "melhorDe1";
+            melhorDe1.Size = new Size(180, 22);
+            melhorDe1.Text = "partida única";
+            melhorDe1.Click += MelhorDe1ToolStripMenuItem_Click;
             // 
-            // melhorDe3ToolStripMenuItem
+            // melhorDe3
             // 
-            melhorDe3ToolStripMenuItem.Name = "melhorDe3ToolStripMenuItem";
-            melhorDe3ToolStripMenuItem.Size = new Size(143, 22);
-            melhorDe3ToolStripMenuItem.Text = "melhor de 3";
-            melhorDe3ToolStripMenuItem.Click += melhorDe3ToolStripMenuItem_Click;
+            melhorDe3.Name = "melhorDe3";
+            melhorDe3.Size = new Size(180, 22);
+            melhorDe3.Text = "melhor de 3";
+            melhorDe3.Click += MelhorDe3ToolStripMenuItem_Click;
             // 
-            // melhorDe5ToolStripMenuItem
+            // melhorDe5
             // 
-            melhorDe5ToolStripMenuItem.Name = "melhorDe5ToolStripMenuItem";
-            melhorDe5ToolStripMenuItem.Size = new Size(143, 22);
-            melhorDe5ToolStripMenuItem.Text = "melhor de 5";
-            melhorDe5ToolStripMenuItem.Click += melhorDe5ToolStripMenuItem_Click;
+            melhorDe5.Name = "melhorDe5";
+            melhorDe5.Size = new Size(180, 22);
+            melhorDe5.Text = "melhor de 5";
+            melhorDe5.Click += MelhorDe5ToolStripMenuItem_Click;
             // 
-            // melhorDe10ToolStripMenuItem
+            // melhorDe10
             // 
-            melhorDe10ToolStripMenuItem.Name = "melhorDe10ToolStripMenuItem";
-            melhorDe10ToolStripMenuItem.Size = new Size(143, 22);
-            melhorDe10ToolStripMenuItem.Text = "melhor de 10";
-            melhorDe10ToolStripMenuItem.Click += melhorDe10ToolStripMenuItem_Click;
+            melhorDe10.Name = "melhorDe10";
+            melhorDe10.Size = new Size(180, 22);
+            melhorDe10.Text = "melhor de 10";
+            melhorDe10.Click += MelhorDe10ToolStripMenuItem_Click;
             // 
             // sobreToolStripMenuItem
             // 
@@ -167,14 +169,14 @@
             modoClássicoToolStripMenuItem.Name = "modoClássicoToolStripMenuItem";
             modoClássicoToolStripMenuItem.Size = new Size(160, 22);
             modoClássicoToolStripMenuItem.Text = "Modo clássico";
-            modoClássicoToolStripMenuItem.Click += modoClassicoToolStripMenuItem_Click;
+            modoClássicoToolStripMenuItem.Click += ModoClassicoToolStripMenuItem_Click;
             // 
             // modoAvançadoToolStripMenuItem
             // 
             modoAvançadoToolStripMenuItem.Name = "modoAvançadoToolStripMenuItem";
             modoAvançadoToolStripMenuItem.Size = new Size(160, 22);
             modoAvançadoToolStripMenuItem.Text = "Modo avançado";
-            modoAvançadoToolStripMenuItem.Click += modoAvançadoToolStripMenuItem_Click;
+            modoAvançadoToolStripMenuItem.Click += ModoAvançadoToolStripMenuItem_Click;
             // 
             // panelPrincipal
             // 
@@ -186,7 +188,7 @@
             // 
             // statusStrip1
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabelPontuacao, toolStripStatusLabelVoce, toolStripStatusLabelVs, toolStripStatusLabelPC, toolStripStatusLabelPartida });
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabelPontuacao, toolStripStatusLabelJogador, toolStripStatusLabelVs, toolStripStatusLabelPC, toolStripStatusLabelPartida });
             statusStrip1.Location = new Point(0, 434);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(564, 22);
@@ -200,11 +202,11 @@
             toolStripStatusLabelPontuacao.Size = new Size(77, 17);
             toolStripStatusLabelPontuacao.Text = "Pontuação:";
             // 
-            // toolStripStatusLabelVoce
+            // toolStripStatusLabelJogador
             // 
-            toolStripStatusLabelVoce.Name = "toolStripStatusLabelVoce";
-            toolStripStatusLabelVoce.Size = new Size(52, 17);
-            toolStripStatusLabelVoce.Text = "Você - ...";
+            toolStripStatusLabelJogador.Name = "toolStripStatusLabelJogador";
+            toolStripStatusLabelJogador.Size = new Size(52, 17);
+            toolStripStatusLabelJogador.Text = "Você - ...";
             // 
             // toolStripStatusLabelVs
             // 
@@ -259,20 +261,20 @@
         private ToolStripMenuItem reiniciarJogoToolStripMenuItem1;
         private ToolStripMenuItem configuraçõesToolStripMenuItem;
         private ToolStripMenuItem partidasToolStripMenuItem;
-        private ToolStripMenuItem partidaUnicaToolStripMenuItem;
-        private ToolStripMenuItem melhorDe3ToolStripMenuItem;
-        private ToolStripMenuItem melhorDe5ToolStripMenuItem;
-        private ToolStripMenuItem melhorDe10ToolStripMenuItem;
+        private ToolStripMenuItem melhorDe1;
+        private ToolStripMenuItem melhorDe3;
+        private ToolStripMenuItem melhorDe5;
+        private ToolStripMenuItem melhorDe10;
         private ToolStripMenuItem sobreToolStripMenuItem;
         private ToolStripMenuItem modoClássicoToolStripMenuItem;
         private ToolStripMenuItem modoAvançadoToolStripMenuItem;
         private ToolStripMenuItem jogoClássicoToolStripMenuItem;
-        private ToolStripMenuItem clássicoToolStripMenuItem;
-        private ToolStripMenuItem avançadoToolStripMenuItem;
+        private ToolStripMenuItem classicoToolStripMenuItem;
+        private ToolStripMenuItem avancadoToolStripMenuItem;
         private Panel panelPrincipal;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabelPontuacao;
-        private ToolStripStatusLabel toolStripStatusLabelVoce;
+        private ToolStripStatusLabel toolStripStatusLabelJogador;
         private ToolStripStatusLabel toolStripStatusLabelVs;
         private ToolStripStatusLabel toolStripStatusLabelPC;
         private ToolStripStatusLabel toolStripStatusLabelPartida;

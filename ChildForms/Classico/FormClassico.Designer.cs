@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClassico));
             labelEscolha = new Label();
             labelPedra = new Label();
             buttonPedra = new Button();
@@ -70,36 +71,39 @@
             // 
             // buttonPedra
             // 
-            buttonPedra.BackgroundImage = Properties.Resources.pedra;
+            buttonPedra.BackgroundImage = (Image)resources.GetObject("buttonPedra.BackgroundImage");
+            buttonPedra.Image = (Image)resources.GetObject("buttonPedra.Image");
             buttonPedra.Location = new Point(30, 120);
             buttonPedra.Name = "buttonPedra";
             buttonPedra.Size = new Size(120, 120);
             buttonPedra.TabIndex = 2;
             buttonPedra.TabStop = false;
             buttonPedra.UseVisualStyleBackColor = true;
-            buttonPedra.Click += buttonPedra_Click;
+            buttonPedra.Click += ButtonPedra_Click;
             // 
             // buttonPapel
             // 
-            buttonPapel.BackgroundImage = Properties.Resources.papel;
+            buttonPapel.BackgroundImage = (Image)resources.GetObject("buttonPapel.BackgroundImage");
+            buttonPapel.Image = (Image)resources.GetObject("buttonPapel.Image");
             buttonPapel.Location = new Point(220, 120);
             buttonPapel.Name = "buttonPapel";
             buttonPapel.Size = new Size(120, 120);
             buttonPapel.TabIndex = 3;
             buttonPapel.TabStop = false;
             buttonPapel.UseVisualStyleBackColor = true;
-            buttonPapel.Click += buttonPapel_Click;
+            buttonPapel.Click += ButtonPapel_Click;
             // 
             // buttonTesoura
             // 
-            buttonTesoura.BackgroundImage = Properties.Resources.tesoura;
+            buttonTesoura.BackgroundImage = (Image)resources.GetObject("buttonTesoura.BackgroundImage");
+            buttonTesoura.Image = (Image)resources.GetObject("buttonTesoura.Image");
             buttonTesoura.Location = new Point(410, 120);
             buttonTesoura.Name = "buttonTesoura";
             buttonTesoura.Size = new Size(120, 120);
             buttonTesoura.TabIndex = 4;
             buttonTesoura.TabStop = false;
             buttonTesoura.UseVisualStyleBackColor = true;
-            buttonTesoura.Click += buttonTesoura_Click;
+            buttonTesoura.Click += ButtonTesoura_Click;
             // 
             // labelPapel
             // 

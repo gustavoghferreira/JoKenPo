@@ -20,51 +20,49 @@ namespace JoKenPo
             InitializeComponent();
         }
 
-        private void buttonLagarto_Click(object sender, EventArgs e)
+        private void ButtonLagarto_Click(object sender, EventArgs e)
         {
-            starGame(3);
+            StarGame(3);
         }
-        private void buttonPapel_Click(object sender, EventArgs e)
+        private void ButtonPapel_Click(object sender, EventArgs e)
         {
-            starGame(0);
-        }
-
-        private void buttonPedra_Click(object sender, EventArgs e)
-        {
-            starGame(1);
+            StarGame(0);
         }
 
-        private void buttonSpock_Click(object sender, EventArgs e)
+        private void ButtonPedra_Click(object sender, EventArgs e)
         {
-            starGame(4);
+            StarGame(1);
         }
 
-        private void buttonTesoura_Click(object sender, EventArgs e)
+        private void ButtonSpock_Click(object sender, EventArgs e)
         {
-            starGame(2);
+            StarGame(4);
         }
 
-        public void starGame(byte opcao)
+        private void ButtonTesoura_Click(object sender, EventArgs e)
         {
-            labelJogador.Visible = false;
-            labelPC.Visible = false;
-            labelResposta.Visible = false;
+            StarGame(2);
+        }
+
+        public void StarGame(byte opcao)
+        {
+            labelJogador.Visible = labelPC.Visible = labelResposta.Visible = false;
 
             Game jogo = new Game();
             string modo = "avancado";
 
-            switch (jogo.jogar(opcao, modo))
+            switch (jogo.Jogar(opcao, modo))
             {
                 case Game.Resultado.Empatar:
-                    pictureResultado.BackgroundImage = Image.FromFile("images/empatou.png");
+                    pictureResultado.BackgroundImage = Image.FromFile("../../../Images/empatou.png");
                     goto default;
                 case Game.Resultado.Ganhar:
-                    pictureResultado.BackgroundImage = Image.FromFile("images/ganhou.png");
-                    status.atualizaStatus(1, 1, 0);
+                    pictureResultado.BackgroundImage = Image.FromFile("../../../Images/ganhou.png");
+                    status.AtualizaStatus(1, 1, 0);
                     goto default;
                 case Game.Resultado.Perder:
-                    pictureResultado.BackgroundImage = Image.FromFile("images/perdeu.png");
-                    status.atualizaStatus(1, 0, 1);
+                    pictureResultado.BackgroundImage = Image.FromFile("../../../Images/perdeu.png");
+                    status.AtualizaStatus(1, 0, 1);
                     goto default;
                 default:
                     pictureJogador.Image = jogo.ImagemJogador;

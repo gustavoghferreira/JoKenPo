@@ -14,7 +14,7 @@ namespace JoKenPo
 {
     public partial class FormPrincipal : Form
     {
-        public sbyte numeroDePartidas = 0, partidasJogadas = 0, pontuacaoJogador = 0, pontuacaoPC = 0;
+        private sbyte _numeroDePartidas = 1, _partidasJogadas = 0, _pontuacaoJogador = 0, _pontuacaoPC = 0;
 
         public FormPrincipal()
         {            
@@ -23,65 +23,78 @@ namespace JoKenPo
 
         #region Menu Arquivo
 
-        public void carregarForm(Form child)
+        public void AtualizarStatusTextos(string partida, string jogador, string pc)
         {
-            if(numeroDePartidas != 0)
-            {
-                try
-                {
-                    limparControles(panelPrincipal);
-                    atualizaStatus(1, 0, 0);
+            toolStripStatusLabelPartida.Text = partida;
+            toolStripStatusLabelPC.Text = pc;
+            toolStripStatusLabelJogador.Text = jogador;
+        }
 
-                    child.TopLevel = false;
-                    child.FormBorderStyle = FormBorderStyle.None;
-                    child.StartPosition = FormStartPosition.CenterScreen;
-                    child.Dock = DockStyle.Fill;
-                    child.Show();
-                    panelPrincipal.Controls.Add(child);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, child.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
+        private void CarregarForm(Form child, string modo)
+        {
+            HabilitaJogos(false);
+
+            try
             {
-                MessageBox.Show("Primeiro selecione o número de partidas em Configurações.");
+                LimparControles(panelPrincipal);
+                AtualizaStatus(1, 0, 0);
+                DefiniTamanhoForm(modo);
+
+                Text = $"JokenPo: {modo}";
+
+                child.TopLevel = false;
+                child.FormBorderStyle = FormBorderStyle.None;
+                child.StartPosition = FormStartPosition.CenterScreen;
+                child.Dock = DockStyle.Fill;
+                child.Show();
+                panelPrincipal.Controls.Add(child);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro ao carregar formulário", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void reiniciarJogoToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void DefiniTamanhoForm(string modo)
         {
-            ClientSize = new Size(560, 430); 
+            var altura = modo == "clássico" ? 460 : 575;
+            ClientSize = new Size(560, altura);
+        }
+
+        private void HabilitaJogos(bool habilitar)
+        {
+            avancadoToolStripMenuItem.Enabled = classicoToolStripMenuItem.Enabled = habilitar;
+        }
+
+        private void JogoAvançadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CarregarForm(new FormAvancado(this), "avançado");
+        }
+
+        private void JogoClassicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CarregarForm(new FormClassico(this), "clássico");
+        }
+
+        private void LimparControles(Panel panel)
+        {
+            panel.Controls.Clear();
+        }
+
+        private void ReiniciarJogoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HabilitaJogos(true);
+            
+            _partidasJogadas = _pontuacaoJogador = _pontuacaoPC = 0;
             Text = "JoKenPo";
-            toolStripStatusLabelPartida.Text = "Partida ?";
-            toolStripStatusLabelPC.Text = "Você - ...";
-            toolStripStatusLabelVoce.Text = "PC - ...";
 
-            limparControles(panelPrincipal);
+            AtualizarStatusTextos("Partida ?", "Jogador - ...", "PC - ...");
+
+            LimparControles(panelPrincipal);
+            DefiniTamanhoForm("clássico");
         }
 
-        private void jogoAvançadoToolStripMenuItem_Click(object sender, EventArgs e) //tamanho, fechar jogo em andamento
-        {
-            ClientSize = new Size(560, 575);
-            Text = "JoKenPo: avançado";
-            carregarForm(new FormAvancado(this));
-        }
-
-        private void jogoClassicoToolStripMenuItem_Click(object sender, EventArgs e) //tamanho, fechar jogo em andamento
-        {
-            ClientSize = new Size(560, 460);
-            Text = "JoKenPo: clássico";
-            carregarForm(new FormClassico(this));
-        }
-
-        private void limparControles(Panel panel)
-        {
-            foreach (Control control in panel.Controls)
-                control.Dispose();
-        }
-
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -89,136 +102,106 @@ namespace JoKenPo
 
         #region Menu Configurações
 
-        public void atualizaStatus(sbyte partida, byte pontoJogador, byte pontoPC)
+        public void AtualizaStatus(sbyte partida, byte pontoJogador, byte pontoPC)
         {
             if (partida > 0)
             {
-                partidasJogadas += +1;
-                toolStripStatusLabelPartida.Text = "Partida atual " + partidasJogadas + "/" + numeroDePartidas;
+                _partidasJogadas++;
+                toolStripStatusLabelPartida.Text = $"Partida atual  {_partidasJogadas}/{_numeroDePartidas}";
             }
             else
             {
-                toolStripStatusLabelPartida.Text = "Partidas selecionadas " + numeroDePartidas;
-                toolStripStatusLabelPC.Text = "PC - 0";
-                toolStripStatusLabelVoce.Text = "Você - 0";
+                AtualizarStatusTextos($"Partidas selecionadas {_numeroDePartidas}", "PC - 0", "Você - 0");
             }
 
             if(pontoJogador > 0)
             {
-                pontuacaoJogador += +1;
-                toolStripStatusLabelVoce.Text = "Você - " + pontuacaoJogador;
+                _pontuacaoJogador++;
+                toolStripStatusLabelJogador.Text = $"Você - {_pontuacaoJogador}";
             }
 
             if (pontoPC > 0)
             {
-                pontuacaoPC += +1;
-                toolStripStatusLabelPC.Text = "PC - " + pontuacaoPC;
+                _pontuacaoPC++;
+                toolStripStatusLabelPC.Text = $"PC - {_pontuacaoPC}";
             }
 
-            if(partidasJogadas > numeroDePartidas && pontuacaoJogador != pontuacaoPC)
+            if(_partidasJogadas > _numeroDePartidas)
             {
-                if(pontuacaoJogador > pontuacaoPC)
-                {
-                    partidasJogadas += -1;
-                    toolStripStatusLabelPartida.Text = "Fim das partidas " + partidasJogadas + "/" + numeroDePartidas;
-                    string enderecoImagem = "images/venceu.png";
-                    carregarImagem(enderecoImagem);
-                }
-                else
-                {
-                    partidasJogadas += -1;
-                    toolStripStatusLabelPartida.Text = "Fim das partidas " + partidasJogadas + "/" + numeroDePartidas;
-                    string enderecoImagem = "images/derrotado.png";
-                    carregarImagem(enderecoImagem);
-                }
+                FinalizarPartidas();
             }
         }
 
-        private void melhorDe3ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FinalizarPartidas()
         {
-            melhorDe3ToolStripMenuItem.Checked = true;
-            if (melhorDe3ToolStripMenuItem.Checked)
-            {
-                melhorDe5ToolStripMenuItem.Checked = false;
-                melhorDe10ToolStripMenuItem.Checked = false;
-                partidaUnicaToolStripMenuItem.Checked = false;
-            }
-            numeroDePartidas = 3;
-            atualizaStatus(0, 0, 0);
+            var resultado = _pontuacaoJogador > _pontuacaoPC ? "venceu" : "derrotado";
+            _partidasJogadas--;
+
+            toolStripStatusLabelPartida.Text = $"Fim das partidas {_partidasJogadas}/{_numeroDePartidas}";
+            CarregarImagem(resultado);
         }
 
-        private void melhorDe5ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MelhorDeSelecionado(sbyte marcado, ToolStripMenuItem checkBoxSelecionado)
         {
-            melhorDe5ToolStripMenuItem.Checked = true;
-            if (melhorDe5ToolStripMenuItem.Checked)
-            {
-                melhorDe3ToolStripMenuItem.Checked = false;
-                melhorDe10ToolStripMenuItem.Checked = false;
-                partidaUnicaToolStripMenuItem.Checked = false;
-            }
-            numeroDePartidas = 5;
-            atualizaStatus(0, 0, 0);
+            melhorDe1.Checked = melhorDe3.Checked = melhorDe5.Checked = melhorDe10.Checked = false;
+            checkBoxSelecionado.Checked = true;
+            _numeroDePartidas = marcado;
+
+            AtualizaStatus(0, 0, 0);
         }
 
-        private void melhorDe10ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MelhorDe1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            melhorDe10ToolStripMenuItem.Checked = true;
-            if (melhorDe10ToolStripMenuItem.Checked)
-            {
-                melhorDe3ToolStripMenuItem.Checked = false;
-                melhorDe5ToolStripMenuItem.Checked = false;
-                partidaUnicaToolStripMenuItem.Checked = false;
-            }
-            numeroDePartidas = 10;
-            atualizaStatus(0, 0, 0);
+            MelhorDeSelecionado(1, melhorDe1);
         }
 
-        private void partidaUnicaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MelhorDe3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            partidaUnicaToolStripMenuItem.Checked = true;
-            if (partidaUnicaToolStripMenuItem.Checked)
-            {
-                melhorDe3ToolStripMenuItem.Checked = false;
-                melhorDe5ToolStripMenuItem.Checked = false;
-                melhorDe10ToolStripMenuItem.Checked = false;
-            }
-            numeroDePartidas = 1;
-            atualizaStatus(0, 0, 0);
+            MelhorDeSelecionado(3, melhorDe3);
+        }
+
+        private void MelhorDe5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MelhorDeSelecionado(5, melhorDe5);
+        }
+
+        private void MelhorDe10ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MelhorDeSelecionado(10, melhorDe10);
         }
 
         #endregion
 
         #region Menu Sobre
 
-        public void carregarImagem(String enderecoImagem)
+        private void CarregarImagem(string imagem)
         {
             try
             {
-                limparControles(panelPrincipal);
+                LimparControles(panelPrincipal);
+                DefiniTamanhoForm("clássico");
 
-                ClientSize = new Size(560, 460);
-
-                PictureBox pictureBox = new PictureBox();
-                pictureBox.Dock = DockStyle.Fill;
-                pictureBox.ImageLocation = (enderecoImagem);
+                PictureBox pictureBox = new PictureBox
+                {
+                    Dock = DockStyle.Fill,
+                    ImageLocation = $"../../../Images/{imagem}.png"
+                };
 
                 panelPrincipal.Controls.Add(pictureBox);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, enderecoImagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Erro ao carregar imagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void modoAvançadoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ModoAvançadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string enderecoImagem = "images/modoAvancado.png";
-            carregarImagem(enderecoImagem);
+            CarregarImagem("modoAvancado");
         }
 
-        private void modoClassicoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ModoClassicoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string enderecoImagem = "images/modoClassico.png";
-            carregarImagem(enderecoImagem);
+            CarregarImagem("modoClassico");
         }
 
         #endregion

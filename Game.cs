@@ -8,99 +8,64 @@ namespace JoKenPo
 {
     internal class Game
     {
-        public static Image[] images =
-        {
-            Image.FromFile("images/papel.png"),
-            Image.FromFile("images/pedra.png"),
-            Image.FromFile("images/tesoura.png"),
-            Image.FromFile("images/lagarto.png"),
-            Image.FromFile("images/spock.png")
-        };
-
+        public Image ImagemJogador { get; private set; }
+        public Image ImagemPC { get; private set; }
         public enum Resultado
         {
             Empatar, Ganhar, Perder
         }
 
-        public Image ImagemJogador { get; private set; }
-        public Image ImagemPC { get; private set; }
-                
-        private byte jogadaPC(string modoDeJogo)
+        public static Image[] Images { get; private set; } = LoadGame();
+
+        private static Image[] LoadGame()
         {
-            try
+            const string imagePath = "../../../Images/";
+            string[] imageFiles = {"papel", "pedra", "tesoura", "lagarto", "spock"};
+
+            List<Image> images = new List<Image>();
+
+            foreach (string fileName in imageFiles)
             {
-                if (modoDeJogo == "classico")
+                try
                 {
-                    int mil = DateTime.Now.Millisecond;
-
-                    if (mil < 333)
-                    {
-                        return 0;
-                    }
-                    else if (mil > 333 && mil < 667)
-                    {
-                        return 1;
-                    }
-                    else
-                    {
-                        return 2;
-                    }
+                    images.Add(Image.FromFile(Path.Combine(imagePath, $"{fileName}.png")));
                 }
-                else
+                catch (Exception ex)
                 {
-                    int mil = DateTime.Now.Millisecond;
-
-                    if (mil < 200)
-                    {
-                        return 0;
-                    }
-                    else if (mil > 200 && mil < 400)
-                    {
-                        return 1;
-                    }
-                    else if (mil > 400 && mil < 600)
-                    {
-                        return 2;
-                    }
-                    else if (mil > 600 && mil < 800)
-                    {
-                        return 3;
-                    }
-                    else
-                    {
-                        return 4;
-                    }
+                    Console.WriteLine($"Erro ao carregar imagem '{fileName}.png': {ex.Message}");
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 5;
-            }            
+
+            return images.ToArray();
         }
 
-        public Resultado jogar(byte jogador, string modoDeJogo)
-        {            
-            byte pc = jogadaPC(modoDeJogo);
 
-            ImagemJogador = images[jogador];
-            ImagemPC = images[pc];
+        private byte JogadaPC(string modoDeJogo)
+        {
+            Random random = new Random();
+            int numero = modoDeJogo == "classico" ? 3 : 5;
+            return (byte)random.Next(numero);
+        }
+
+        public Resultado Jogar(byte jogador, string modoDeJogo)
+        {
+            byte pc = JogadaPC(modoDeJogo);
+
+            ImagemJogador = Images[jogador];
+            ImagemPC = Images[pc];
 
             if (jogador == pc)
             {
                 return Resultado.Empatar;
             }
-            else if ((jogador == 2 && pc == 0) || (jogador == 0 && pc == 1) || (jogador == 1 && pc == 3) ||
-                     (jogador == 3 && pc == 4) || (jogador == 4 && pc == 2) || (jogador == 2 && pc == 3) ||
-                     (jogador == 3 && pc == 0) || (jogador == 0 && pc == 4) || (jogador == 4 && pc == 1) ||
-                     (jogador == 1 && pc == 2))
+
+            var verificaGanhador = new (byte jogador, byte pc)[]
             {
-                return Resultado.Ganhar;
-            }
-            else
-            {
-                return Resultado.Perder;
-            }
+                (2, 0), (0, 1), (1, 3), (3, 4), (4, 2),
+                (2, 3), (3, 0), (0, 4), (4, 1), (1, 2)
+            };
+
+            return verificaGanhador.Contains((jogador, pc)) ? Resultado.Ganhar : Resultado.Perder;
         }
     }
 }

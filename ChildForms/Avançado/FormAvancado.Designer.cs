@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAvancado));
             labelEscolha = new Label();
             labelTesoura = new Label();
             labelPapel = new Label();
@@ -94,60 +95,62 @@
             // 
             // buttonTesoura
             // 
-            buttonTesoura.BackgroundImage = Properties.Resources.tesoura;
+            buttonTesoura.BackgroundImage = (Image)resources.GetObject("buttonTesoura.BackgroundImage");
+            buttonTesoura.Image = (Image)resources.GetObject("buttonTesoura.Image");
             buttonTesoura.Location = new Point(410, 97);
             buttonTesoura.Name = "buttonTesoura";
             buttonTesoura.Size = new Size(120, 120);
             buttonTesoura.TabIndex = 12;
             buttonTesoura.TabStop = false;
             buttonTesoura.UseVisualStyleBackColor = true;
-            buttonTesoura.Click += buttonTesoura_Click;
+            buttonTesoura.Click += ButtonTesoura_Click;
             // 
             // buttonPapel
             // 
-            buttonPapel.BackgroundImage = Properties.Resources.papel;
+            buttonPapel.BackgroundImage = (Image)resources.GetObject("buttonPapel.BackgroundImage");
+            buttonPapel.Image = (Image)resources.GetObject("buttonPapel.Image");
             buttonPapel.Location = new Point(220, 97);
             buttonPapel.Name = "buttonPapel";
             buttonPapel.Size = new Size(120, 120);
             buttonPapel.TabIndex = 11;
             buttonPapel.TabStop = false;
             buttonPapel.UseVisualStyleBackColor = true;
-            buttonPapel.Click += buttonPapel_Click;
+            buttonPapel.Click += ButtonPapel_Click;
             // 
             // buttonPedra
             // 
-            buttonPedra.BackgroundImage = Properties.Resources.pedra;
+            buttonPedra.BackgroundImage = (Image)resources.GetObject("buttonPedra.BackgroundImage");
+            buttonPedra.Image = (Image)resources.GetObject("buttonPedra.Image");
             buttonPedra.Location = new Point(30, 97);
             buttonPedra.Name = "buttonPedra";
             buttonPedra.Size = new Size(120, 120);
             buttonPedra.TabIndex = 10;
             buttonPedra.TabStop = false;
             buttonPedra.UseVisualStyleBackColor = true;
-            buttonPedra.Click += buttonPedra_Click;
+            buttonPedra.Click += ButtonPedra_Click;
             // 
             // buttonLagarto
             // 
-            buttonLagarto.BackgroundImage = Properties.Resources.pedra;
-            buttonLagarto.Image = Properties.Resources.lagarto;
+            buttonLagarto.Image = (Image)resources.GetObject("buttonLagarto.Image");
             buttonLagarto.Location = new Point(127, 253);
             buttonLagarto.Name = "buttonLagarto";
             buttonLagarto.Size = new Size(120, 120);
             buttonLagarto.TabIndex = 13;
             buttonLagarto.TabStop = false;
             buttonLagarto.UseVisualStyleBackColor = true;
-            buttonLagarto.Click += buttonLagarto_Click;
+            buttonLagarto.Click += ButtonLagarto_Click;
             // 
             // buttonSpock
             // 
-            buttonSpock.BackgroundImage = Properties.Resources.papel;
-            buttonSpock.Image = Properties.Resources.spock;
+            buttonSpock.BackgroundImage = (Image)resources.GetObject("buttonSpock.BackgroundImage");
+            buttonSpock.Image = (Image)resources.GetObject("buttonSpock.Image");
             buttonSpock.Location = new Point(313, 253);
             buttonSpock.Name = "buttonSpock";
             buttonSpock.Size = new Size(120, 120);
             buttonSpock.TabIndex = 14;
             buttonSpock.TabStop = false;
             buttonSpock.UseVisualStyleBackColor = true;
-            buttonSpock.Click += buttonSpock_Click;
+            buttonSpock.Click += ButtonSpock_Click;
             // 
             // labelLagarto
             // 
